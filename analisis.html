@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Rob">
+    <link href="sweetalert/sweetalert.css" rel="stylesheet" />
+    <script src="sweetalert/sweetalert.min.js"></script>
+    <link rel="manifest" href="./manifest.json">
+    <script type="text/javascript">
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js");
+        }
+    </script>
+    <title>CRUD-PWA</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="./css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="./css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="./css/dataTables/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./css/startmin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        #capturedImage {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Rob</a>
+            </div>
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <ul class="nav navbar-nav navbar-left navbar-top-links">
+                <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+            </ul>
+
+            <ul class="nav navbar-right navbar-top-links">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> secondtruth <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="index.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="form.html"><i class="fa fa-dashboard fa-fw"></i>Formulario</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Detección<span
+                                    class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="foto.html">Tomar Foto</a>
+                                </li>
+                                <li>
+                                    <a href="analisis.html" class="active">Análisis y resultados</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header bg-warning">
+                            <font style="color: red;">Tables</font>
+                        </h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img id="capturedImage" alt="Captured Image">
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="./js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="./js/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="./js/dataTables/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="./js/startmin.js"></script>
+
+    <link href="chosen/chosen.css" rel="stylesheet">
+    <script src="chosen/chosen.jquery.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+        // Recuperamos la imagen almacenada del almacenamiento local
+        var imageDataUrl = localStorage.getItem('capturedImage');
+
+        // Mostramos la imagen en la página
+        var capturedImage = document.getElementById('capturedImage');
+        capturedImage.src = imageDataUrl;
+
+        function ver_modal() {
+            $("#modito").modal("show");
+        }
+
+        function cerrar_modal() {
+            $("#modito").modal('hide');
+        }
+        function validarLetras(e) {
+            var tecla = (document.all) ? e.keyCode : e.which;// 2
+            if (tecla == 8) return true; // 3
+            var patron = /[A-Za-z\s]/; // 4
+            var te = String.fromCharCode(tecla); // 5
+            return patron.test(te); // 6
+        }
+
+        function validarNumeros(inputElement) {
+            var inputValue = inputElement.value;
+            var numericValue = inputValue.replace(/[^0-9]/g, ''); // Elimina todo lo que no sea un número
+
+            // Asigna el valor numérico al campo
+            inputElement.value = numericValue;
+        }
+        function validarNumeros2(e) {
+            var tecla = (document.all) ? e.keyCode : e.which;// 2
+            if (tecla == 8) return true; // 3
+            var patron = /[0-9\.]/; // 4
+            var te = String.fromCharCode(tecla); // 5
+            return patron.test(te); // 6
+        }
+
+        function validarEmail() {
+            var cor = $("#correo").val();
+            var patron = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+            if (patron.test(cor) == false) {
+                $("#correo").val("");
+                swal("Rob", "Utilice un correo válido!!", "error");
+            }
+        }
+        $(document).ready(function () {
+            $('.chzn-select').chosen({ "width": "100%" });
+            $('.chzn-drop').css({ "width": "300px" });
+        })
+        function validarrob() {
+            var cad = document.getElementById("cedula").value.trim();
+            var total = 0;
+            var longitud = cad.length;
+            var longcheck = longitud - 1;
+            if (cad !== "" && longitud === 10) {
+                for (i = 0; i < longcheck; i++) {
+                    if (i % 2 === 0) {
+                        var aux = cad.charAt(i) * 2;
+                        if (aux > 9) aux -= 9;
+                        total += aux;
+                    } else {
+                        total += parseInt(cad.charAt(i)); // parseInt o concatenará en lugar de sumar
+                    }
+                }
+                total = total % 10 ? 10 - total % 10 : 0;
+                if (cad.charAt(longitud - 1) == total) { } else {
+                    swal("Rob", "Cedula Inválida", "error");
+                }
+            }
+        }
+
+        function ValidarCed1(cedu) {
+            var pass = document.getElementById('passrob');
+            var nomb = document.getElementById('nombrob');
+            if (cedu.value.length < 10) {
+                swal("Rob ", "Escriba su cédula completa", "error");
+                cedu.focus();
+                cedu.select();
+            }
+        }
+
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true,
+                "language": {
+                    "search": "Buscar :",
+                    "lengthMenu": "Ver _MENU_ registros",
+                    "zeroRecords": "No se encontraron resultados",
+                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Sig.",
+                        "previous": "Ant."
+                    },
+                }
+            });
+        });
+
+        window.addEventListener('load', () => {
+            if (!navigator.onLine) {
+                showSweetAlert('Oops!', 'No estás conectado a Internet.', 'error');
+            }
+        });
+
+        // Manejar eventos de conexión/desconexión
+        window.addEventListener('online', () => {
+            hideSweetAlert();
+        });
+
+        window.addEventListener('offline', () => {
+            showSweetAlert('Oops!', 'No estás conectado a Internet.', 'error');
+        });
+
+        // Funciones para mostrar y ocultar el SweetAlert
+        function showSweetAlert(title, text, icon) {
+            Swal.fire({
+                title: title,
+                text: text,
+                icon: icon,
+            });
+        }
+    </script>
+
+</body>
+
+</html>
